@@ -1,6 +1,6 @@
 [user]
-	name = Matti Grip
-	email = matti@tocaboca.com
+	name = Andreas Bergman
+	email = andreas.bergman@estrid.com
 [mergetool "Kaleidoscope"]
         cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
         trustexitcode = true
@@ -15,7 +15,7 @@
 [diff]
         tool = Kaleidoscope
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = /Users/andreas/.gitignore
         editor = code --wait
 	autocrlf = input
 [apply]
@@ -28,3 +28,9 @@
         ui = auto
 [alias]
 	co = checkout
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
